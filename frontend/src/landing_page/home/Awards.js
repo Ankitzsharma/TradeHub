@@ -2,7 +2,7 @@ import React from 'react';
 
 function Awards() {
   return (
-    <div className="container my-5">
+    <div className="container my-5 pb-5">
       <div className="row align-items-center">
         {/* Image Column */}
         <div className="col-12 col-md-6 mb-4 mb-md-0">
@@ -15,7 +15,7 @@ function Awards() {
 
         {/* Text + List Column */}
         <div className="col-12 col-md-6">
-          <h1 className="pb-2">Largest Stock Broker in India</h1>
+          <h2 className="pb-2">Largest Stock Broker in India</h2>
           <p>
             2+ Million TradeHub Clients contribute to over 15% of all retail <br></br>order volumes
             in India daily by trading and investing in:
@@ -39,12 +39,7 @@ function Awards() {
           </div>
 
           {/* Press Logos */}
-          <img
-            src="media/images/pressLogos.png"
-            alt="Press Logos"
-            className="img-fluid pt-4"
-            style={{width:'90%'}}
-          />
+          <img src="media/images/pressLogos.png" alt="Press Logos" className="img-fluid pt-4" style={{width:'90%'}} />
         </div>
       </div>
     </div>
