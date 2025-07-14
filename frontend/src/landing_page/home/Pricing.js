@@ -2,7 +2,7 @@ import React from 'react';
 
 function Pricing(){
     return(
-        <div className='container pb-5'>
+        <div className='container pt-5 pb-5 p-5'>
             <div className='row'>
                 <div className='col-4'>
                     <h1 className='mb-3'>Unbeatable pricing</h1>
@@ -12,7 +12,7 @@ function Pricing(){
                 </div>
                 <div className='col-2'></div>   {/*Blank column for spacing */}
                 <div className='col-6'>
-                    <div className='row '>
+                    <div className='row m-3'>
                         <div className='col border text-center'>
                             <h1 className='p-3'><i class="fa-solid fa-indian-rupee-sign">0</i></h1>
                             <p >Free Account Opening</p>

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Stats(){
     return (
-        <div className='container p-2 ml-2'>
+        <div className='container p-2 ml-2 p-5'>
             <div className='row'>
                 <div className='col-5 '>
                     <h1>Trust with confidence</h1>
@@ -30,7 +30,7 @@ function Stats(){
                         <a href='www.chrome.com' className="text-decoration-none">Try Kite Demo <i class="fa-solid fa-arrow-right-long"></i></a>
                     </div>
                 </div>
-                <div className='text-center pt-2 pb-5'><img src='media/images/pressLogos.png' alt='PressLogos'  /></div>
+                <div className='text-center pb-5'><img src='media/images/pressLogos.png' alt='PressLogos'  /></div>
             </div>
 
         </div>
