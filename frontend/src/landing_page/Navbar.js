@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 function Navbar() {
     return (
         
-            <nav className="navbar navbar-expand-lg bg-light border-bottom Syle=backgroundColor:'#FFF'  navbar sticky-top">
+            <nav className="navbar navbar-expand-lg bg-light border-bottom navbar sticky-top" Syle={{backgroundColor:'#FFF'}}  >
                 <div className="container ">
                     {/* Brand Name */}
-                    <Link className="navbar-brand" style={{color:'blue' ,fontWeight:'bold',fontSize:'1.5rem'}} to="#">TradeHub.</Link>
+                    <Link className="navbar-brand" style={{color:'blue' ,fontWeight:'bold',fontSize:'1.5rem'}} to="/">TradeHub.</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
