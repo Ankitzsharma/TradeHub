@@ -3,7 +3,7 @@ import React from 'react';
 function Hero(){
     return(
         <div className='container'>
-            <div className='row p-5 mb-5'>
+            <div className='row p-5 mt-3'>
                 <h1 className='fs-4 text-center'>We Pioneered the discount broking model in India, <br></br>
                 Now, we are breaking ground with our technology.</h1> 
             </div>
@@ -19,13 +19,13 @@ function Hero(){
                     </p>
 
                 </div>
-                <div className='col-6 p-5'>
+                <div className='col-6 p-5 '>
                     <p>In addition, we run a number of popular open online educational and community initiatives to empower retail traders and investors.</p>
 
-                    <p>We are a team of over 2,000 passionate individuals, and we are proud to be bootstrapped and profitable since inception.</p>
+                    <p><a className='text-decoration-none' href='https://www.google.com/'>Rainmatter</a>, our fintech fund and incubator, has invested in several fintech startups with the goal of growing the Indian capital markets.</p>
 
 
-                    <p>And yet, we are always up to something new every day. Catch up on the latest updates on our blog or see what the media is saying about us or learn more about our business and product philosophies.</p>
+                    <p>And yet, we are always up to something new every day. Catch up on the <a className='text-decoration-none' href='https://www.google.com/'>latest updates</a> on our <a className='text-decoration-none' href='https://www.google.com/'>blog</a> or see what the media is <a className='text-decoration-none' href='https://www.google.com/'>saying about us</a> or learn more about our business and product <a className='text-decoration-none' href='https://www.google.com/'>philosophies</a></p>
                 </div>
             </div>
         </div>
