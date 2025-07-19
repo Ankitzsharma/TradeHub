@@ -2,7 +2,10 @@ import React from 'react';
 
 function Hero(){
     return(
-        <h1>Hero</h1>
+        <div className='container text-center'>
+            <h1>Pricing</h1>
+            <p>Free Euity Investments and flat 20 traday anf F&O trades.</p>
+        </div>
     );
 }
 
