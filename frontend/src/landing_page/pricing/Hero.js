@@ -15,7 +15,7 @@ function Hero(){
                     <h6 className='text-muted' style={{lineHeight:'2', wordSpacing:'4px'}}>All equity delivery investments (NSE, BSE), are absolutely free — ₹ 0 brokerage.</h6>
                 </div>
                 <div className='col-4 text-center p-4'>
-                    <img style={{width:'250px'}} src='media/images/pricing0.svg' alt=''/>
+                    <img style={{width:'250px'}} src='media/images/intradayTrades.svg' alt=''/>
                     <h3 className='p-2'>Intraday and F&O trades</h3>
                     <h6 className='text-muted' style={{lineHeight:'2',wordSpacing:'4px'}}>Flat ₹ 20 or 0.03% (whichever is lower) per executed order on intraday trades across equity, currency, and commodity trades. Flat ₹20 on all option trades.</h6>
                 </div>
