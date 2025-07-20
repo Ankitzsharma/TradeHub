@@ -18,3 +18,14 @@ code {
 .navbarSupportedContent{
   text-align: right;
 }
+
+#supportHero{
+  background-color:rgb(97, 97, 239);
+  color: white;
+}
+
+#supportWrapper{
+  display:flex;
+  justify-content: space-between;
+  margin: 0 140px;
+}
