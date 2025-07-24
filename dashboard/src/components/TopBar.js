@@ -8,12 +8,12 @@ const TopBar=()=>{
                 <div className='nifty'>
                     <p className='index'>Nifty 50</p>
                     <p className='index-points'>{100.2} </p>
-                    <p className='percent'> </p>
+                    <p className='percent'></p>
                 </div>
-                <div className='nifty'>
-                    <p className='index'>Nifty 50</p>
+                <div className='sensex'>
+                    <p className='index'>SENSEX</p>
                     <p className='index-points'>{100.2} </p>
-                    <p className='percent'> </p>
+                    <p className='percent'></p>
                 </div>
             </div>
 
