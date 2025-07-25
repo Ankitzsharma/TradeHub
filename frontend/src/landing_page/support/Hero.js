@@ -2,9 +2,9 @@ import React from 'react';
 
 function Hero(){
     return(
-        <div className='container-fluid ps-5' id='supportHero'>
+        <div className='container-fluid ps-5 ' id='supportHero'>
             
-            <div className='p-5 pt-5 mb-5 ps-2' id='supportWrapper'>
+            <div className='p-5 pt-5 mb-5 ps-5 ms-5' id='supportWrapper'>
                 <h3>Support Portal</h3>
                 <button className='btn btn-light ' style={{width:'8rem'}} ><b>My Ticket</b></button>
             </div>
@@ -22,11 +22,11 @@ function Hero(){
                         <a className='text-decoration-none' style={{color:'white'}}  href=''>Kite user manual <i class="fa-solid fa-up-right-from-square"></i> </a>
                     </div>
                 </div>
-                <div className='col-6 p-5 '>
+                <div className='col-6 p-3 pb-5 mb-5'>
                     <h2>Featured</h2>
                     <ol>
-                        <li><a style={{color:'white'}}  href=''>Current Takeover and Delisting - January 2025</a></li>
-                        <li><a style={{color:'white'}}  href=''>Latest Intraday leverages - MIS & CO</a></li>
+                        <li><a style={{textDecoration:'none'}}  href=''>Current Takeover and Delisting - January 2025</a></li>
+                        <li><a style={{textDecoration:'none'}}  href=''>Latest Intraday leverages - MIS & CO</a></li>
                     </ol>
                 </div>
                 
