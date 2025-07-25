@@ -6,7 +6,7 @@ function Signup(){
         <>
         <Navbar />
         <div className='container p-5 m-5'>
-            <h1>Signup Page</h1>
+            <h1 className='text-center'>Signup Page</h1>
         </div>
         <Footer />
         </>
