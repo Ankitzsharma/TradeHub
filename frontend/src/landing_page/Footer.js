@@ -8,11 +8,11 @@ function Footer(){
                     <a className="navbar-brand" style={{color:'blue' ,fontWeight:'bold',fontSize:'1.5rem'}} href="#">TradeHub.</a> <br></br>
                     <p className='pt-2'>&copy; 2010-2025, Not TradeHub Broking Ltd.<br></br>All rights reserved.</p>
                     {/* <p>All rights reserved.</p> */}
-                    <a href='#'><i class="fa-brands fa-twitter p-1"></i></a>
-                    <a href=''><i class="fa-brands fa-meta p-1"></i></a>
-                    <a href=''><i class="fa-brands fa-instagram p-1"></i></a>
-                    <a href=''><i class="fa-brands fa-linkedin p-1"></i></a>
-                    <a href=''><i class="fa-brands fa-telegram p-1"></i></a>
+  <a href='#'><i className="fa-brands fa-twitter p-1"></i></a>
+  <a href=''><i className="fa-brands fa-meta p-1"></i></a>
+  <a href=''><i className="fa-brands fa-instagram p-1"></i></a>
+  <a href=''><i className="fa-brands fa-linkedin p-1"></i></a>
+  <a href=''><i className="fa-brands fa-telegram p-1"></i></a>
                 </div>
                 <div className='col'>
                     <h5>Company</h5>

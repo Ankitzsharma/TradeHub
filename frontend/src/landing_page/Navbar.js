@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 function Navbar() {
     return (
         
-            <nav className="navbar navbar-expand-lg bg-light border-bottom navbar sticky-top" Syle={{backgroundColor:'#FFF'}}  >
+<nav className="navbar navbar-expand-lg bg-light border-bottom navbar sticky-top" style={{backgroundColor:'#FFF'}}  >
                 <div className="container ">
                     {/* Brand Name */}
                     <Link className="navbar-brand" style={{color:'blue' ,fontWeight:'bold',fontSize:'2rem'}} to="/">TradeHub.</Link>
@@ -30,7 +30,7 @@ function Navbar() {
                                 <Link className='nav-link active' to='/support'>Support</Link>
                             </li>
                             <li className='nav-item'>
-                                <Link className='nav-link active' to='/'><i class="fa-solid fa-bars"></i></Link>
+<Link className='nav-link active' to='/'><i className="fa-solid fa-bars"></i></Link>
                             </li>
                             
                         </ul>

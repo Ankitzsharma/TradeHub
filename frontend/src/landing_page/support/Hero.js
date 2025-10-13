@@ -15,11 +15,11 @@ function Hero(){
                     <input style={{width:'28em',padding:'7px',borderRadius:'12px', marginTop:'12px'}}  placeholder='Eg: how do i activate F&O  Why is my order getting rejected..' />
 
                     <div className='pt-3'id='supporter' >
-                        <a className='text-decoration-none' style={{color:'white'}}  href='' >Track account opening <i class="fa-solid fa-up-right-from-square"></i> &nbsp;</a><br></br>
-                        <a className='text-decoration-none' style={{color:'white'}}  href=''>Track segment activation <i class="fa-solid fa-up-right-from-square"></i> </a><br></br>
-                        <a className='text-decoration-none' style={{color:'white'}}  href=''>Intraday. <i class="fa-solid fa-up-right-from-square"></i> &nbsp;</a>
-                        <a className='text-decoration-none' style={{color:'white'}}  href=''>Margins <i class="fa-solid fa-up-right-from-square"></i> </a><br></br>
-                        <a className='text-decoration-none' style={{color:'white'}}  href=''>Kite user manual <i class="fa-solid fa-up-right-from-square"></i> </a>
+<a className='text-decoration-none' style={{color:'white'}}  href='' >Track account opening <i className="fa-solid fa-up-right-from-square"></i> &nbsp;</a><br></br>
+<a className='text-decoration-none' style={{color:'white'}}  href=''>Track segment activation <i className="fa-solid fa-up-right-from-square"></i> </a><br></br>
+<a className='text-decoration-none' style={{color:'white'}}  href=''>Intraday. <i className="fa-solid fa-up-right-from-square"></i> &nbsp;</a>
+<a className='text-decoration-none' style={{color:'white'}}  href=''>Margins <i className="fa-solid fa-up-right-from-square"></i> </a><br></br>
+<a className='text-decoration-none' style={{color:'white'}}  href=''>Kite user manual <i className="fa-solid fa-up-right-from-square"></i> </a>
                     </div>
                 </div>
                 <div className='col-6 p-3 pb-5 mb-5'>

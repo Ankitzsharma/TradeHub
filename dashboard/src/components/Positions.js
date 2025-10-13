@@ -1,8 +1,14 @@
-import React from "react";
-
-import { positions } from "../data/data";
+import React, { useEffect, useState } from "react";
+import { api } from "../api";
 
 const Positions = () => {
+  const [positions, setPositions] = useState([]);
+
+  useEffect(() => {
+    api.get("/allPositions").then((res) => {
+      setPositions(res.data);
+    });
+  }, []);
   return (
     <>
       <h3 className="title">Positions ({positions.length})</h3>
