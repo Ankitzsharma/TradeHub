@@ -1,70 +1,172 @@
-# Getting Started with Create React App
+# TradeHub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full‑stack trading platform composed of three apps:
 
-## Available Scripts
+- `backend`: Node.js/Express server with MongoDB (Mongoose) for holdings, positions, and orders.
+- `dashboard`: React trading UI showing holdings/positions, charts, and basic order entry.
+- `frontend`: React landing/marketing site with pages like Home, Pricing, Support, and a placeholder Signup.
 
-In the project directory, you can run:
+The intended user flow: users visit the landing site, sign up/sign in, and then access the dashboard. At present, the signup page is a placeholder and dashboard access is not gated by authentication.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Table of Contents
+- [Project Description](#project-description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [API Reference](#api-reference)
+- [Contribution Guidelines](#contribution-guidelines)
+- [License](#license)
+- [Roadmap](#roadmap)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Project Description
+TradeHub aims to provide a clean, responsive interface for retail traders to view holdings and positions, visualize data with charts, and place basic orders. A public landing site communicates the brand and funnels users to sign up.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Backend provides REST APIs for reading holdings/positions and creating orders. MongoDB stores data via Mongoose schemas.
+- Dashboard consumes backend APIs to render tables and charts. Order placement is wired to the backend.
+- Frontend is the marketing site and currently includes a `/signup` page placeholder.
 
-### `npm run build`
+### Project Structure
+```
+TradeHub/
+├── backend/            # Express + Mongoose server
+│   ├── index.js
+│   ├── model/
+│   └── schemas/
+├── dashboard/          # React trading dashboard (CRA)
+│   └── src/
+└── frontend/           # React landing site (CRA)
+    └── src/
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
+Prerequisites:
+- Node.js 18+ and npm
+- A running MongoDB instance (local or cloud) and a connection string
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install dependencies for each app:
 
-### `npm run eject`
+```bash
+# Backend
+cd backend
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Dashboard
+cd ../dashboard
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Frontend (landing site)
+cd ../frontend
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
+1. Start the backend server:
+   ```bash
+   cd backend
+   npm start
+   ```
+   - Server listens on `PORT` from `.env` (defaults to `3002`).
+   - Connects to MongoDB via `MONGO_URL`.
 
-## Learn More
+2. Start the dashboard app:
+   ```bash
+   cd dashboard
+   npm start
+   ```
+   - Opens the trading dashboard in the browser (default CRA dev port).
+   - Holdings are fetched from the backend; positions may be static until aligned to the API.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Start the landing site:
+   ```bash
+   cd frontend
+   npm start
+   ```
+   - Visit `/signup` to see the placeholder signup page.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Data seeding (optional)
+There are commented routes in `backend/index.js` to seed sample holdings and positions. You may temporarily uncomment `/addHoldings` and `/addPositions` for local seeding, call them once, then re‑comment.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Configuration
+### Backend `.env`
+Create a `.env` file in `backend/` with:
+```
+PORT=3002
+MONGO_URL=mongodb+srv://<user>:<pass>@<cluster>/<db>?retryWrites=true&w=majority
+```
+Optional (future authentication):
+```
+JWT_SECRET=replace-with-a-strong-secret
+```
 
-### Analyzing the Bundle Size
+### CORS
+Restrict CORS origins in production to your landing and dashboard domains. If you later use cookie‑based auth, enable credentials and set secure cookie flags.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Frontend/Dashboard API base URL
+Current code references `http://localhost:3002` directly. For flexibility, you can introduce an env variable and shared axios client:
+```
+REACT_APP_API_URL=http://localhost:3002
+```
+Then use `axios.create({ baseURL: process.env.REACT_APP_API_URL, withCredentials: true })` and replace hardcoded URLs.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## API Reference
+Base URL: `http://localhost:3002`
 
-### Advanced Configuration
+- `GET /allHoldings`
+  - Returns an array of holding objects: `{ name, qty, avg, price, net, day }`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- `GET /allPositions`
+  - Returns an array of position objects: `{ product, name, qty, avg, price, net, day, isLoss }`.
 
-### Deployment
+- `POST /newOrder`
+  - Creates a new order.
+  - Body (JSON):
+    ```json
+    { "name": "TCS", "qty": 1, "price": 3194.8, "mode": "BUY" }
+    ```
+  - Response: `200 OK` with confirmation (consider returning `201 Created` and the created resource).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+> Planned: `/auth/signup`, `/auth/login`, `/auth/logout`, `/auth/me` to gate dashboard access to registered users.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contribution Guidelines
+- Fork the repo and create feature branches (`feature/auth`, `fix/cors`, etc.).
+- Add tests for new features when applicable; avoid introducing breaking changes without discussion.
+- Keep changes focused; prefer small, reviewable pull requests.
+- Follow existing code style; use descriptive names and avoid secrets in code.
+- Document environment requirements and update this README when adding new configuration.
+- Write clear commit messages (imperative mood, short subject, optional body).
+
+---
+
+## License
+This project uses the ISC license (as specified in `backend/package.json`). If you intend to distribute the project, add a top‑level `LICENSE` file with the full ISC text and ensure all packages reflect the same license.
+
+---
+
+## Roadmap
+- Implement authentication (JWT httpOnly cookies or `passport` sessions) and protect dashboard routes.
+- Add input validation (`zod`/`joi`), error handling, and standardized response codes.
+- Replace hardcoded API URLs with env‑driven config; centralize axios client with `withCredentials` when using cookies.
+- Align positions view to backend API and add loading/error states.
+- Improve Mongoose schemas (required fields, defaults, indexes) and connect DB before server starts.
+- Add logging (`morgan`) and minimal observability.
+- Add unit/integration tests and CI to run them.
+- Consider migrating CRA apps to Vite or align React version for stability.
+
+---
+
+## Acknowledgements
+- Built with Express, Mongoose, React, Chart.js, Axios, and React Router.
