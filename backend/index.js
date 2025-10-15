@@ -365,7 +365,7 @@ app.post("/newOrder", requireAuth, async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log("App started!");
+  console.log(`App started! on port ${PORT}`);
   if (uri) {
     mongoose
       .connect(uri)
