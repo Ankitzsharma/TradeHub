@@ -8,17 +8,17 @@ function Pricing(){
                     <h1 className='mb-3'>Unbeatable pricing</h1>
                     <p className='text-muted'>We pioneered the concept of discount broking and price transparency in India. Flat fees and no hidden charges.</p>
 
-                    <a href='www.zerodha.com' className='text-decoration-none' >See Pricing <i class="fa-solid fa-arrow-right-long"></i></a>
+<a href='www.zerodha.com' className='text-decoration-none' >See Pricing <i className="fa-solid fa-arrow-right-long"></i></a>
                 </div>
                 <div className='col-2'></div>   {/*Blank column for spacing */}
                 <div className='col-6'>
                     <div className='row m-3'>
                         <div className='col border text-center'>
-                            <h1 className='p-3'><i class="fa-solid fa-indian-rupee-sign">0</i></h1>
+<h1 className='p-3'><i className="fa-solid fa-indian-rupee-sign">0</i></h1>
                             <p >Free Account Opening</p>
                         </div>
                         <div className='col border text-center '>
-                            <h1 className='p-3'><i class="fa-solid fa-indian-rupee-sign">20</i></h1>
+<h1 className='p-3'><i className="fa-solid fa-indian-rupee-sign">20</i></h1>
                             <p >Free Equity delivery and direct mutual funds</p>
                         </div>
                     </div>
