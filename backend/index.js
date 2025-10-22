@@ -35,7 +35,7 @@ const app = express();
 const cookieParser = require("cookie-parser");
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:3003", "http://localhost:3004"],
+    origin: ["https://tradehub-frontend-mxiu.onrender.com", "https://tradehub-dashboard.onrender.com"],
     credentials: true,
   })
 );
